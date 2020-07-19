@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创作业务数据</title>
+    <!-- 引入 echarts.js -->
+    <script src="/static/echarts.min.js"></script>
+</head>
+<body>
+
+<h1>1、创作全业务数据图</h1>
+
+<div> <iframe src="./static/cz_total.html" width="100%" height="600" ></iframe></div>
+
+<h1>2、创作设计数据(不含研发)</h1>
+
+<div> <iframe src="./static/cz.html" width="100%" height="600" ></iframe></div>
+
+<h1>3、创作半年成本图</h1>
+
+<div> <iframe src="./static/pie.html" width="100%" height="600" ></iframe></div>
+
+<h1>4、创作全年成本图</h1>
+
+<div> <iframe src="./static/pie_1year_cost.html" width="100%" height="600" ></iframe></div>
+
+<h1>5、创作工作室详细分析图1</h1>
+
+<div><img src="./static/cz_00.png" height="100%" width="100%"/></div>
+
+<h1>6、创作工作室详细分析图2</h1>
+
+<div><img src="./static/cz_01.png" height="100%" width="100%"/></div>
+
+<h1>7、创作工作室详细分析图3</h1>
+
+<div><img src="./static/cz_02.png" height="100%" width="100%"/></div>
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('pyecharts_pie'));
+    // 指定图表的配置项和数据
+    var option = {{ pie_options | safe }};
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+<div style="height: 300px"></div>
+</body>
+</html>
